@@ -200,12 +200,30 @@
         .background-lol p{
             background-color: antiquewhite;
             margin-top: 50px;
-            
+            margin-left: -100px;
+            padding: 5px;
+            transition: .5s all ease;
         }
         .background-lol h2{
             color: white;
             margin: -5px;
             margin-left: -200px;
+            transition: 1s all ease-out;
+        }
+        .background-lol h2:hover{
+            background-color: white;
+            padding: 30px;
+            transition: 3s all ease-in;
+        }
+        @media only screen and (max-width: 500px){
+            .background-lol p{
+                word-spacing: .01em;
+                /*letter-spacing:0.5em;*/
+                padding: 10px;
+                padding-right: 40px;
+                font-size: 10pt;
+                transition: .5s all ease;
+            }
         }
     </style>
 </head>
@@ -259,7 +277,7 @@
 
     <!-- NAVBAR CLOSED  -->
     <div class="background-lol">
-        <div class= "container-fluid">
+        <div class= "container-fluid fs-5 fs-md-2">
             <h2>
                 Demitasse Cup and Saucer
             </h2>
