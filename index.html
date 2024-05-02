@@ -14,7 +14,9 @@
             background-color: /*#f8f9fa;*/#fff5ee;
             line-height: 1.6;
             color: #3E2723; /* Coffee text color */
+            
         }
+        
         .navbar-hidden { /* Navbar moving out  of the way  */
             transform: translateY(-100%);
             transition: transform 0.3s ease-in-out;
@@ -27,6 +29,10 @@
         .navbar{
             background-color: #F0E1CD;
             padding: 1px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar-hidden{
+            transform: translateY(-100%);
         }
         /*.navbar-custom .navbar-nav .nav-link {
             color: white;
@@ -35,12 +41,16 @@
         .navbar-custom .navbar-nav .nav-link:focus {
             color: #f04101;  Lighter shade for hover effects /
         }*/
+        .navbar-title{
+            /*font-size: smaller;*/
+            margin-left: 1rem;
+        }
         .navbar-brand img{
             margin-left: 10px;
-        }
-        .navbar-brand img {
+            /*transition: width 0.3s ease, height 0.3s ease;transition: 1s  all ease;*/
             transition: transform 0.3s ease;
         }
+
         .navbar-brand:hover img {
             transform: scale(1.1);
         }
@@ -117,22 +127,75 @@
         /*  END OF NAVBAR OFF-CANVAS  */
 
         .card-custom {
-            background-color: #f0e9e0;
-            /*background: linear-gradient(145deg, #f8f9fa, #e9ecef);*/
-            border-radius: 10px;
+            background-color: #f5d4aa;
+            /*background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;*/
+            border: #815034 solid 2px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             color: #333;
+            padding: 15px;
+            margin-top: 100px;
             transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out, background-color 1s ease;
         }
-        .card-custom:hover {
+        /*.card-custom:hover {
             transform: translateY(-5px); 
             box-shadow: 0 16px 25px rgba(0, 0, 0, 0.2); 
             background-color: rgb(240, 224, 224);
-        }
+        }*/
         .card-title, .card-text {
             color: #333;
             text-align:  center;
         }
+
+        .card-body {
+            position: relative; /* If using absolute positioning within */
+            width: 100%;
+            height: 300px; /* Example fixed height */
+            overflow: hidden; /* Prevents content from spilling out */
+            
+            
+        }
+
+        .card-img {
+            width: 100%; /* Ensures the image is only as wide as its container */
+            height: 100%; /* Maintains aspect ratio */
+            max-height: 100%; /* Prevents the image from being taller than its container */
+            padding: 50px 0;
+        }
+        .card-hover-text {
+            width: 50%;  
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            margin-left: 20px;  
+            visibility: hidden; 
+        }
+        
+        .is-visible {
+            opacity: 1; 
+            visibility: visible;
+        }
+        .img-normal, .img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease;
+            object-fit: cover;
+        }
+
+        .img-hover {
+            opacity: 0;
+        }
+
+        .card-body:hover .img-normal {
+            opacity: 0;
+        }
+
+        .card-body:hover .img-hover {
+            opacity: 1;
+        }
+
         .card-text{
             border: 1.5px solid #333;  /* Set the border with a specific thickness and color */
             padding: 10px;           /* Adds space inside the border */
@@ -189,7 +252,7 @@
             color: var(--text-color);
         }
         .background-lol{
-            background: url(Images/3cups.jpeg) no-repeat center center fixed; 
+            background: url(Images/3cupsA.jpeg) no-repeat center center fixed; 
             -webkit-background-size: cover;
             /**/-moz-background-size: cover;
             -o-background-size: cover;
@@ -198,37 +261,271 @@
             
         }
         .background-lol p{
-            background-color: antiquewhite;
+            background-color: var(--primary-color);
+            color: white;
             margin-top: 50px;
             margin-left: -100px;
             padding: 5px;
             transition: .5s all ease;
         }
+        /*
         .background-lol h2{
             color: white;
             margin: -5px;
             margin-left: -200px;
-            transition: 1s all ease-out;
+            margin-bottom: 100px;
+            margin-top: -250px;
+            transition: 2s all ease-out;
         }
         .background-lol h2:hover{
             background-color: white;
-            padding: 30px;
-            transition: 3s all ease-in;
+            padding: 10px;
+            padding-right: 40px;
+            transition: 1s all ease-in;
+        }*/
+        /* Little Experiementations */
+        .col-md-6 p {
+            font-family: 'Merriweather', serif; 
+            color: #3E2723; 
+            font-size: 1.2rem; 
+            line-height: 1.8; 
+            text-align: justify; 
+            padding: 20px; 
+            
+            background-color: #fff; 
+            border-bottom: 5px solid var(--primary-color); 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+            margin: 20px 0; 
+            transition: all 0.3s ease-in-out; 
         }
-        @media only screen and (max-width: 500px){
+
+        .col-md-6 p:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25); 
+        }
+        .card-custom2{
+            background-color: #f0ded1; 
+            padding: 100px 0;
+            border: #777 2px solid;
+            transition: all 1s ease;
+        }
+        .card-custom3 {
+            background-color: #f5d4aa;
+            /*background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;margin-top: 200px; */
+            border: #815034 solid 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+            padding: 15px;
+            
+            transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out, background-color 1s ease;
+        }
+        
+        .croissant {
+            background-color: var(--secondary-color); 
+            padding: 50px 0; 
+            /*text-align: justify;  */
+            color: var(--primary-color); 
+            font-family: 'Poppins', sans-serif; 
+            font-size: 1.4rem; 
+            border-top: 5px solid var(--primary-color); 
+            border-bottom: 5px solid var(--primary-color); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .croissant img{
+            max-width: 900px;
+            min-width: 300px;
+            width: 100%;
+            border: #cec6ad 2px dashed;
+            padding: 10px;
+            margin-left: 20px;
+            
+        }
+        .croissant-text-box {
+            border: #ffffffd0 2px  dashed;
+            color: white;
+            text-shadow: #000000 1px 1px;
+            line-height: normal;
+            margin: 20px;
+            padding: 20px;
+            /*background-color: #9c4d3548;
+           
+            display: inline-block;animation: fadeInUp 1s linear forwards;
+            -webkit-animation:fadeInUp 1s linear forwards;  */
+        }
+        .croissant-text{
+            font-family: 'Times New Roman', Times, serif;
+            /*border: #ffffffd0 1px solid;
+            background-color: rgba(255, 255, 255, 0.336);*/
+            font-size: 23pt;
+            letter-spacing: 2px;
+            padding: 0px;
+            margin: 2s0px;
+            
+        }
+
+        .image-container {
+            position: relative;
+            display: block;
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: rgba(12, 12, 11, 0.35); /* Semi-transparent black */
+            z-index: 1; /* Ensures the overlay is above the image but below the text */
+        }
+
+        .text-overlay {
+            font-family: 'Times New Roman', Times, serif;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.75rem;
+            z-index: 2; /* Ensures the text is above the background overlay */
+            text-align: center; /* Centers the text horizontally */
+            width: 100%; /* Makes the text container as wide as the image */
+            padding: 20px 0; /* Adds vertical padding */
+            box-sizing: border-box; /* Ensures padding does not affect the width */
+            transition: all .5s  ease-in-out; 
+        }
+
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        .outside-img{
+            max-width: 800px; 
+            border: 4px solid var(--primary-color);
+            transition: all 1s ease;
+        }
+        .outside-img:hover{
+            /*border: 60px solid var(--primary-color);
+            border-top: 20px solid var(--primary-color);*/
+            max-width: 1000px;
+            padding: 0px;
+        }
+        
+        .col-md-4 p {
+            color: #fff; 
+            font-family: 'Merriweather', serif; 
+            margin-bottom: 15px; 
+            text-align: left; 
+            line-height: 1.6; 
+            margin-left: 40px;
+            border: 1px solid white;
+            padding: 1px;
+            padding-left: 10px;
+        }
+
+        .col-md-4 img {
+            width: 100%; 
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 1px 1px 19px rgba(255, 255, 255, 0.3); 
+            margin-bottom: 20px; 
+            margin-left: 20px;
+            margin-top: 20px;
+            /*padding: 10px;*/
+        }        
+        .col-md-4 h2{
+            margin-top: 30px;
+            margin-left: 40px;
+            font-size: 24pt;
+            background-color: white;
+            padding: 2px;
+            
+        }
+        .col-md-4 li {
+            margin-left: 40px;
+            
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .navbar-brand {
+                position: relative; 
+            }
+            /*.navbar-brand img {
+                width: 80px;  r smaller screens *
+                height: 80px; /* 
+            }*/
+            .navbar-brand h5 {
+                display: block; 
+                position: absolute;
+                top: 100%; 
+                left: 50%;
+                transform: translateX(-50%); 
+                width: 100%; 
+                
+            }
+            .background-lol {
+                padding: 50px 20px; 
+                background-size: auto 100%; 
+            }
             .background-lol p{
                 word-spacing: .01em;
                 /*letter-spacing:0.5em;*/
+                margin-left: 0px;
                 padding: 10px;
-                padding-right: 40px;
+                padding-right: 10px;
                 font-size: 10pt;
                 transition: .5s all ease;
             }
+            .text-overlay {
+                
+                top: 30%;
+                left: 50%;
+                
+                font-size: 1.5rem;
+                padding: 0;
+        
+            }
+            .col-md-4 p, .col-md-4 img {
+                text-align: center; 
+            }
+
+            .col-md-4 img {
+                margin-left: auto; 
+                margin-right: auto; 
+                max-width: 90%;
+            }   
+            /*.croissant img{
+                max-width: 1px;
+            }
+            
+            .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;  
+            }
+            .col-md-6 img {
+                margin: 0 auto; 
+                height: 20vh;style="max-width: 700px; height: auto; margin-left: 20px; "
+                
+            }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px); 
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }*/
+
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container-fluid">
             <!-- Left-aligned links for larger screens -->
             <div class="navbar-nav me-auto d-none d-lg-flex">
@@ -239,9 +536,14 @@
                 <a class="nav-link" href="#">History</a-->
             </div>
             <!-- Centered logo -->
-            <a class="navbar-brand mx-lg-0 mx-auto" href="#">
+            <div class="navbar-brand mx-lg-0 mx-auto" href="#">
                 <img src="Images/lacasaLogo.png" width="100" height="100" alt="La Casa Del Caffe">
-            </a>
+                
+            </div>
+            <h5 class="navbar-title d-none d-lg-inline-block align-middle">
+                    La Casa Del Caffe
+            </h5>
+                
             <!-- Toggler for offcanvas navbar on smaller screens -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -278,114 +580,198 @@
     <!-- NAVBAR CLOSED  -->
     <div class="background-lol">
         <div class= "container-fluid fs-5 fs-md-2">
-            <h2>
-                Demitasse Cup and Saucer
-            </h2>
             <p>
-            Bring home the Demitasse Cup and Saucer used to serve espresso at our cafes around the world.
+                Experience the rich simplicity of our espresso, where every sip brings a taste of tradition to the common.
             </p>
         </div>
-            
-        
-        </div>
-    <div class="container mt-4">
-        
 
     </div>
+
     <div class="container mt-4">
-        <div class="row">
+        <div class="row ">
             <div class="col-md-6">
-                <div class="card card-custom mb-3">
-                    <!-- img src="https://lipsum.app/id/1/1200x675" class="card-img-top" alt="Featured Coffee"-->
-                    <div id="myCarousel" class="f-carousel">
-                        <div class="f-carousel__slide"><img src="Images/cap2.jpeg" class="d-block w-100" alt="Image 1"><div class="card-body">
-                            <p class="card-text">Enjoy our classic Latte at a special price! Crafted with care and perfect for a cozy morning.</p>
-                
-                        </div></div>
-                        <div class="f-carousel__slide">
-                            <img src="Images/cap.jpeg" class="d-block w-100" alt="Image 2">
-                            <!--p class="placeholder-glow">
-                                <span class="placeholder col-12"></span>
-                                <p class="placeholder-glow">
-                                    <span class="placeholder col-5"></span>
-                                </p>
-                            </p-->
-                            
-                            
-                
-                        </div>
-                    </div>
+                <div class= "card-custom mb-3"> 
+                    <!-- card    ^^^^^^^^^^^^^^^^^^^^    img src="https://lipsum.app/id/1/1200x675" class="card-img-top" alt="Featured Coffee"-->
+                    
                     <div class="card-body">
-                        <h5 class="card-title">Latte</h5>    
+                        <div class="card-img">
+                            <img src="Images/cap2.jpeg" class="img-normal d-block w-100" alt="Original Image"/>
+                            <img src="Images/cap.jpeg" class="img-hover d-block w-100" alt="Hover Image" style="display:none;"/>
+                        </div> 
+                           
+                        <!--<img src="Images/cap2.jpeg" class="d-block w-100" alt="Image 1">
+                        h5 class="card-title">Latte</h5-->    
                                  
                         <!--p class="card-text">Enjoy our classic Latte at a special price! Crafted with care and perfect for a cozy morning.</p-->
                     </div>
+                    <p class="card-text">Enjoy our classic <b>Latte</b> at a special price! Crafted with care and perfect for a cozy morning.</p>
+                        
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class= "card-custom mb-3"> 
+                    <!-- card    ^^^^^^^^^^^^^^^^^^^^    img src="https://lipsum.app/id/1/1200x675" class="card-img-top" alt="Featured Coffee"-->
+                    
+                    <div class="card-body">
+                        <div class="card-img">
+                            <img src="Images/whitecupCasa.png" class="img-normal d-block w-100 h-100" alt="Original Image"/>
+                            <img src="Images/white cup.jpg" class="img-hover d-block w-100 h-100" alt="Hover Image" style="display:none;"/>
+                           </div> 
+                        </div>
+                    <p class="card-text">Start your morning with our most notable <b>espresso</b>, served in a sleek white cup. </p>
+                        
+                </div>
+            </div>
+ 
             
-            <!--div class="col-md-6">
-                <div id="myCarousel" class="f-carousel">
-                    <div class="f-carousel__slide"><img src="https://lipsum.app/id/2/1200x675" class="d-block w-100" alt="Image 1"></div>
-                    <div class="f-carousel__slide"><img src="https://lipsum.app/id/3/1200x675" class="d-block w-100" alt="Image 2"></div>
+        </div>
+        <div class="row my-4 card-custom2" >
+            <!--div class="row"></div-->
+                <div class="col-md-6">
+                    <img src="Images/two caps.jpg" alt="Cappuccino">
                 </div>
-            </div-->
+                <div class="col-md-6 ">
+                    <p>Experience our signature <b>cappuccino</b>, crafted with precision and served in a setting that evokes comfort and ambience. Dive into the rich, creamy texture that our baristas masterfully create every day.</p>
+                </div>
+            
         </div>
-        <div class="row my-4">
-            <div class="col">
-                <h2>About Us</h2>
-                <p>Discover the history behind our passion for coffee. At La Casa Del Caffe, we're committed to brewing the perfect cup every time.</p>
-            </div>
-        </div>
-        
-        <div class="row my-4">
-            <div class="col">
-                <h2>Our Coffee Journey</h2>
-                <p>From sourcing the finest beans to mastering the art of roasting, our journey is one of passion and excellence.</p>
-            </div>
-        </div>
-        <div class="row my-4">
-            <div class="col">
-                <h2>Special Offers</h2>
-                <p>Check out our weekly specials! This week: Buy one get one free on all espresso drinks.</p>
-            </div>
-        </div>
-        <div class="row my-4">
-            <div class="col">
-                <h2>Upcoming Events</h2>
-                <p>Join us for our monthly coffee tasting event. Learn from our experts and taste unique blends from around the world.</p>
-            </div>
-        </div>
-        <div class="row my-4">
-            <div class="col">
-                <h2>Customer Testimonials</h2>
-                <p>"Best coffee in town! The atmosphere is great and the staff are super friendly." - Emily R.</p>
-                <p>"I love the seasonal flavors and the cozy vibes this place offers." - Mark S.</p>
+
+    </div>
+    <div class="container mt-4">
+        <div class="row my-4 croissant">
+            <div class="row">
+                <div class="col-6">
+                    <img src="Images/croissant.png" alt="Croissants">
+                    </div>
+                <div class="col-md-6">
+                    <div class="croissant-text-box">
+                        <div class="croissant-text">
+                            Indulge the morning with our popular relaxing delights, <br> croissants<br> coupled with our signature coffee. 
+                        </div>
+
+                        
+                    </div>
+                    
+                    <img src="Images/original_croissant.jpg" alt="Croissants" style=" max-width: 340px;">
+                    
+                    
+                    
+                </div>
             </div>
         </div>
     </div>
+    
+    <div class="container mt-4"> 
+        <div class="image-container">
+            <img src="Images/sit_and_relax.jpg" class="d-block w-100" alt="Original Image" />
+            <div class="background-overlay">
+                <div class="text-overlay">Embrace the simple pleasures and serene moments here.</div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="container mt-4">
+        <div class="row my-4" style="background-color: var(--primary-color);">
+            <div class="col">
+                <div class="card-custom3" style="text-align: center; font-size: 26pt; padding: 10px 50px;">
+                    <h1>About Us</h1>
+                </div>
+                <div class="card-custom3">
+                    <h2>Our Heritage</h2>
+                    <p>
+                        Nestled in the heart of Morris Park, a neighborhood rich with Italian heritage, La Casa Del Caffe has been serving the community with exceptional espresso since the late 1990s. Our founder, Anna Agovino, discovered her unique talent for espresso making quite by accident, but soon became the soul of our café.
+                    </p>
+                    <p>
+                        Anna's signature touch and meticulous attention to every detail of espresso making have turned our modest café into a landmark for coffee lovers. Known for her magic wrist and the thick creamy head of her espresso, Anna's dedication ensures every cup is a testament to traditional Italian coffee making. It's not just coffee we're brewing; it's a legacy.
+                    </p>
+                </div>
+                <img src="Images/The outside.jpg" class="outside-img d-block w-100" alt="Outside View"/>
+                
+                <div class="card-custom" style="margin: 40px;">
+                    <h2>Commitment to Excellence</h2>
+                    <p>
+                        At La Casa Del Caffe, we pride ourselves on our commitment to sustainability and community involvement. Each espresso served is a celebration of rich flavors and the joy of Italian coffee, crafted with love and precision. Join us for a taste of history and experience the best coffee in New York City, as endorsed by our loyal patrons and connoisseurs alike.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row my-4 bg-dark text-light">
+        <div class="col-12 col-md-4">
+            <img src="Images/Googlestaticmap.png" alt="Location">
+            <p>Don't miss out on our weekly specials! Enjoy a buy-one-get-one-free offer on all espresso drinks this week. Plus, join us for our monthly coffee tasting event to explore unique blends from around the globe and meet fellow coffee enthusiasts.</p>
+        </div>
+        <div class="col-12 col-md-4">
+            <h2>Location & Office Hours</h2>
+            <p><strong>La Casa Del Caffe</strong><br>
+               1036 Morris Park Ave,<br>
+               Bronx, NY 10461</p>
+            <p><strong>Hours of Operation:</strong></p>
+            <p>
+                Monday - Saturday: 7:00 AM - 11:00 PM <br>
+                Sunday: 7:00 AM - 2:30 PM, 7:00 PM - 11:00 PM<br>
+            </p>
+            <!--ul>
+                <li>Monday - Saturday: 7:00 AM - 11:00 PM</li>
+                <li></li>
+            </ul-->
+            <p>Visit us to experience the best coffee in town, or order online for your daily coffee fix!</p>
+        </div>
+    </div>
+
+   
     <footer class="footer-custom py-3 mt-auto">
-        <div class="container">
-            <span class="text-muted">Visit us or order online for your daily coffee fix!</span>
+        <div class="container text-center">
+            <p class="text-muted"><strong>La Casa Del Caffe</strong></p>
+            <p>(718) 931-7816</p>
+            
+            <p><em>Visit us or order online for your daily coffee fix!</em></p>
         </div>
     </footer>
+    
+
+
+
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
     <script>
-        // Function to add or remove the .navbar-hidden class based on scroll position
         let lastScrollTop = 0;
-        window.addEventListener("scroll", function(){
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar.offsetHeight;
+        window.addEventListener("scroll", function() {
             let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            if (currentScroll > lastScrollTop){
+            if (currentScroll > lastScrollTop && currentScroll > navbarHeight) {
                 // Scrolling Down
-                document.querySelector('.navbar').classList.add('navbar-hidden');
+                navbar.classList.add('navbar-hidden');
             } else {
-              
-                document.querySelector('.navbar').classList.remove('navbar-hidden');
+                // Scrolling Up
+                navbar.classList.remove('navbar-hidden');
             }
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile 
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
         }, false);
-        new Carousel(document.getElementById("myCarousel"), {});
+        document.addEventListener("DOMContentLoaded", function() {
+    
+        var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            } else {
+                entry.target.classList.remove('is-visible');
+            }
+            });
+        });
+
+        document.querySelectorAll('.card-hover-text').forEach(item => {
+            observer.observe(item);
+        });
+    });
+
+
+        //new Carousel(document.getElementById("myCarousel"), {});
     </script>
 </body>
 </html>
