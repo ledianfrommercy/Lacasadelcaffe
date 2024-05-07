@@ -96,8 +96,8 @@
         }
         .nav-link:hover{
             /*filter: invert(0.5) sepia(1) saturate(5) hue-rotate(200deg);
-             (Edge 12, Firefox 35, Safari 9, Chrome 53, Opera 40) */
-            color: #815034; 
+             (Edge 12, Firefox 35, Safari 9, Chrome 53, Opera 40) 
+            color: #815034; */
             text-decoration: none; 
     
             cursor: pointer;
@@ -107,16 +107,16 @@
         }
         .nav-item:hover{
             background-color: #F0E1CD;
-            margin-left: 15px;
-            padding-left: 6px;
+            margin-left: 1px;
+            padding-left: 5px;
             /*border-radius: 0.5rem;#f0ddd5;
             text-shadow: -1px -1px 0 #333333af, 1px -1px 0 #333333af, -1px 1px 0 #333333af, 1px 1px 0 #333333af; 
            
             border: 2px solid rgba(0, 0, 0, 0.05);*/
-            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
-            transform: scale(1.05); 
+            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.05);
+            transform: scale(1.01); 
             border-radius: 5px;
-            padding: 0.2rem .4rem;
+            padding: 0.05rem .2rem;
             
             transition: all  .4s ease-in;
         }
@@ -127,16 +127,38 @@
         /*  END OF NAVBAR OFF-CANVAS  */
 
         .card-custom {
-            background-color: #f5d4aa;
-            /*background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-            border-radius: 10px;*/
+            /*background-color: #f5d4aa;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
             border: #815034 solid 2px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             color: #333;
             padding: 15px;
-            margin-top: 100px;
+            margin-top: 100px; 
             transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out, background-color 1s ease;
-        }
+        */
+            /*background-color: black;  Removing the background */
+            background-color:transparent; /*#f8f9fa;#ece2db;*/
+            border: none; /* Removing the border */
+            box-shadow: none; 
+            color: #333;
+            /*margin-bottom: 10px;
+             padding: 20px;
+            margin-top: 100px;Removing the shadow 
+            width: 100%;
+            
+            padding-top: 50px;
+            */display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            
+            max-width: 450px;
+            transition: transform 1s ease-in-out;
+           }
         /*.card-custom:hover {
             transform: translateY(-5px); 
             box-shadow: 0 16px 25px rgba(0, 0, 0, 0.2); 
@@ -148,17 +170,24 @@
         }
 
         .card-body {
-            position: relative; /* If using absolute positioning within */
+            position: relative; 
             width: 100%;
-            height: 300px; /* Example fixed height */
+            /*height: 400px;  Example fixed height 
+            max-width: 400px;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0;
+            padding: 0px;
+            margin-top: 100px;
+            padding-top: 100%;
             overflow: hidden; /* Prevents content from spilling out */
-            
             
         }
 
         .card-img {
-            width: 100%; /* Ensures the image is only as wide as its container */
-            height: 100%; /* Maintains aspect ratio */
+            width: 100%; 
+            height: 100%; 
             max-height: 100%; /* Prevents the image from being taller than its container */
             padding: 50px 0;
         }
@@ -180,8 +209,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            transition: opacity 0.5s ease;
             object-fit: cover;
+            transition: opacity 0.5s ease;
+            
         }
 
         .img-hover {
@@ -197,11 +227,17 @@
         }
 
         .card-text{
-            border: 1.5px solid #333;  /* Set the border with a specific thickness and color */
-            padding: 10px;           /* Adds space inside the border */
-            border-radius: 8px;      /* Rounded corners */
+            border: none; /* 1.5px solid #333;  Set the border with a specific thickness and color */
+            padding: 10px;           /*  */
+            /*border-radius: 8px;       Rounded corners */
             margin: 10px; 
+            background-color: transparent;
             transition: all .5s ease-out;
+        }
+        .blue-coffee-text{
+            text-align: center; 
+            line-height: 1.6; 
+            padding-top: 20px;
         }
         .card-text:hover{
             transform: translateY(-5px);
@@ -284,7 +320,13 @@
             transition: 1s all ease-in;
         }*/
         /* Little Experiementations */
-        .col-md-6 p {
+        .col-md-6 img {
+      
+            box-shadow: 1px 1px 19px rgba(255, 255, 255, 0.3); 
+            
+            /*padding: 10px;*/
+        } 
+        /*.text-bg-custom p{
             font-family: 'Merriweather', serif; 
             color: #3E2723; 
             font-size: 1.2rem; 
@@ -296,29 +338,49 @@
             border-bottom: 5px solid var(--primary-color); 
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
             margin: 20px 0; 
+        }*/
+        .col-md-6 p {
+            font-family: 'Merriweather', serif; 
+            color: #3E2723; 
+            font-size: 1.2rem; 
+            line-height: 1.8; 
+            text-align: justify; 
+            padding: 20px; 
+            
+            background-color: #fff; 
+             /*border-bottom: 5px solid var(--primary-color); */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+            margin: 20px 0; 
             transition: all 0.3s ease-in-out; 
         }
 
         .col-md-6 p:hover {
-            transform: translateY(-5px); 
+            transform: translateY(-1px); 
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25); 
         }
         .card-custom2{
-            background-color: #f0ded1; 
+            background-color: #b9aba1; 
             padding: 100px 0;
             border: #777 2px solid;
             transition: all 1s ease;
         }
         .card-custom3 {
-            background-color: #f5d4aa;
+            background-color: #ffffff;
             /*background: linear-gradient(145deg, #f8f9fa, #e9ecef);
             border-radius: 10px;margin-top: 200px; */
-            border: #815034 solid 2px;
+            border: #a88f80 solid 2px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             color: #333;
             padding: 15px;
+            text-align: center;
             
             transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out, background-color 1s ease;
+        }
+        .card-custom4{
+            color: #333;
+            padding-top: 100px;
+            text-align: center;
+            letter-spacing: 1px;
         }
         
         .croissant {
@@ -365,36 +427,77 @@
             margin: 2s0px;
             
         }
+        .text-bg-custom {
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-left: 5px solid var(--primary-color); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            
+        }
+
+        /*.btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }*/
+
+        .img-fluid {
+            max-width: 100%; 
+            height: auto; /* aspect ratio */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft  */
+        }
 
         .image-container {
-            position: relative;
-            display: block;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff5ee;
+            
+            margin-bottom: 50px;
         }
 
         .background-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            width: 50%;
+            width: 100%;
             height: 100%;
-            background-color: rgba(12, 12, 11, 0.35); /* Semi-transparent black */
-            z-index: 1; /* Ensures the overlay is above the image but below the text */
+            background-color: rgba(253, 242, 236, 0.75); /* Semi-transparent black */
+            z-index: 1; 
+            transition: background-color 0.5s ease;
         }
 
         .text-overlay {
             font-family: 'Times New Roman', Times, serif;
             position: absolute;
-            top: 30%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
             font-size: 1.75rem;
-            z-index: 2; /* Ensures the text is above the background overlay */
-            text-align: center; /* Centers the text horizontally */
-            width: 100%; /* Makes the text container as wide as the image */
-            padding: 20px 0; /* Adds vertical padding */
-            box-sizing: border-box; /* Ensures padding does not affect the width */
-            transition: all .5s  ease-in-out; 
+            z-index: 2; 
+            text-align: center; 
+            width: 80%; 
+            padding: 20px; 
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            box-sizing: border-box; 
+            transition: fadeIn 2s  ease-in-out forwards; 
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .image-container:hover .background-overlay {
+            background-color: rgba(0, 0, 0, 0); 
         }
 
         .image-container img {
@@ -413,7 +516,10 @@
             padding: 0px;
         }
         
-        .col-md-4 p {
+        /*.col-md-4 p {
+            
+        }*/
+        .img-stuff p{
             color: #fff; 
             font-family: 'Merriweather', serif; 
             margin-bottom: 15px; 
@@ -425,7 +531,7 @@
             padding-left: 10px;
         }
 
-        .col-md-4 img {
+        .img-stuff img {
             width: 100%; 
             height: auto; 
             border-radius: 8px; 
@@ -447,8 +553,35 @@
             margin-left: 40px;
             
         }
+        .about-text {
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #fff; 
+        }
+
         
         @media only screen and (max-width: 768px) {
+            .about-text {
+                width: 95%; 
+                font-size: 0.9rem; 
+                padding: 15px;
+            }
+            .background-overlay{
+                display: none !important; 
+            }
+            .image-container{
+               
+                margin-top: 50px;
+                margin-bottom: 150px;
+            }
+            .card-custom3{
+                margin-top: 80px;
+            }
+            .text-bg-custom {
+                padding: 2rem; 
+            }
             .navbar-brand {
                 position: relative; 
             }
@@ -589,44 +722,69 @@
 
     <div id="menu" class="container mt-4">
         <div class="row ">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div  class= "card-custom mb-3"> 
                     <!-- card    ^^^^^^^^^^^^^^^^^^^^    img src="https://lipsum.app/id/1/1200x675" class="card-img-top" alt="Featured Coffee"-->
                     
                     <div class="card-body">
                         <div class="card-img">
+                            <img src="Images/cap2.jpeg" class="img-normal" alt="Latte"/>
+                            <img src="Images/cap.jpeg" class="img-hover" alt="Latte Hover"/>
+                        </div>
+                        
+                        <!--div class="card-img">
                             <img src="Images/cap2.jpeg" class="img-normal d-block w-100" alt="Original Image"/>
                             <img src="Images/cap.jpeg" class="img-hover d-block w-100" alt="Hover Image" style="display:none;"/>
-                        </div> 
+                        </div--> 
                            
                         <!--<img src="Images/cap2.jpeg" class="d-block w-100" alt="Image 1">
                         h5 class="card-title">Latte</h5-->    
                                  
                         <!--p class="card-text">Enjoy our classic Latte at a special price! Crafted with care and perfect for a cozy morning.</p-->
                     </div>
-                    <p class="card-text">Enjoy our classic <b>Latte</b> at a special price! Crafted with care and perfect for a cozy morning.</p>
+                    <p class="blue-coffee-text"><b>Latte</b></p>
                         
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class= "card-custom mb-3"> 
                     <!-- card    ^^^^^^^^^^^^^^^^^^^^    img src="https://lipsum.app/id/1/1200x675" class="card-img-top" alt="Featured Coffee"-->
                     
                     <div class="card-body">
-                        <div class="card-img">
+                        <img src="Images/whitecupCasa.png" class="img-normal" alt="Latte"/>
+                        <img src="Images/white cup.jpg" class="img-hover" alt="Latte Hover"/>
+                        <!--div class="card-img">
                             <img src="Images/whitecupCasa.png" class="img-normal d-block w-100 h-100" alt="Original Image"/>
                             <img src="Images/white cup.jpg" class="img-hover d-block w-100 h-100" alt="Hover Image" style="display:none;"/>
                            </div> 
-                        </div>
-                    <p class="card-text">Start your morning with our most notable <b>espresso</b>, served in a sleek white cup. </p>
+                        -->
+                    </div>
+                    <p class="blue-coffee-text"> <b>Espresso</b></p>
+                        
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class= "card-custom mb-3"> 
+                    <!-- card    ^^^^^^^^^^^^^^^^^^^^    img src="https://lipsum.app/id/1/1200x675" class="card-img-top" alt="Featured Coffee"-->
+                    
+                    <div class="card-body">
+                        <img src="Images/two caps.jpg" class="img-normal" alt="Latte"/>
+                        <img src="Images/casa1.jpeg" class="img-hover" alt="Latte Hover"/>
+                        
+                    </div>
+                    <p class="blue-coffee-text">  <b>Cappuccino</b> </p>
                         
                 </div>
             </div>
  
             
-        </div>
+        </div><!--div class="card-img">
+                            <img src="Images/whitecupCasa.png" class="img-normal d-block w-100 h-100" alt="Original Image"/>
+                            <img src="Images/white cup.jpg" class="img-hover d-block w-100 h-100" alt="Hover Image" style="display:none;"/>
+                           </div> 
+                        
         <div class="row my-4 card-custom2" >
-            <!--div class="row"></div-->
+            <--div class="row"></div->
                 <div class="col-md-6">
                     <img src="Images/two caps.jpg" alt="Cappuccino">
                 </div>
@@ -634,93 +792,85 @@
                     <p>Experience our signature <b>cappuccino</b>, crafted with precision and served in a setting that evokes comfort and ambience. Dive into the rich, creamy texture that our baristas masterfully create every day.</p>
                 </div>
             
-        </div>
+        </div>-->
 
     </div>
-    <div class="container mt-4">
-        <div class="row my-4 croissant">
-            <div class="row">
-                <div class="col-6">
-                    <img src="Images/croissant.png" alt="Croissants">
-                    </div>
-                <div class="col-md-6">
-                    <div class="croissant-text-box">
-                        <div class="croissant-text">
-                            Indulge the morning with our popular relaxing delights, <br> croissants<br> coupled with our signature coffee. 
-                        </div>
 
-                        
-                    </div>
-                    
-                    <img src="Images/original_croissant.jpg" alt="Croissants" style=" max-width: 340px;">
-                    
-                    
-                    
+    
+    <div class="container mt-4">
+        <div class="row align-items-center" style="margin: 100px 0;">
+            <div class="col-md-6">
+                <img src="Images/original_croissant.jpg" alt="Croissants" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <div class="text-bg-custom p-4">
+                    <h3>Start Your Morning with Our Signature <b>Croissants</b></h3>
+                    <p>Indulge in the flaky, buttery goodness of our freshly baked <b>croissants</b>, the perfect complement to our artisanal coffees. Each croissant is crafted with care, using traditional techniques that ensure a deliciously light texture and rich flavor. Pair it with a steaming cup of our signature coffee for a truly sublime morning treat.</p>
+                    <!--button class="btn btn-primary">Learn More</button-->
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about" class="image-container" style="position: relative; text-align: center; color: white; ">
+        <div class="background-overlay">
+
+        </div>
+        <!--img src="Images/sit_and_relax.jpg" alt="Serene Cafe Setting" style="width: 100%; height: auto;"-->
+        <div class="about-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; background: rgba(0, 0, 0, 0.0); padding: 20px; border-radius: 10px;">            
+            <div class="card-custom3" style="text-align: center; font-size: 26pt; padding: 10px 50px;">
+                <h1 style="box-sizing: border-box;
+                font-size: 1rem;
+                line-height: 1.6; ">About Us</h1>
+            </div>
+            
+            <div class="card-custom4">
+                <p>
+                    Nestled in the heart of <b>Morris Park,</b> a neighborhood rich with Italian heritage;<br> <b>La Casa Del Caffe</b> has been serving the community with exceptional espresso since the late 1990s. Our founder, <b>Anna Agovino,</b> discovered her unique talent for espresso making quite by accident, but soon became the soul of our café.
+                </p>
+                <p>
+                    Anna's signature touch and meticulous attention to every detail of espresso making have turned our modest café into a landmark for coffee lovers. Known for her magic wrist and the thick creamy head of her espresso, Anna's dedication ensures every cup is a testament to <b>traditional Italian coffee</b> making. It's not just coffee we're brewing; it's a legacy.
+                </p>
+                <h2 style="font-style: italic; padding-top: 50px; padding-bottom: 10px;"><b>Commitment to Excellence</b></h2>
+
+                <p style="font-style: italic;"> Each espresso served is a celebration of rich flavors and the joy of Italian coffee, crafted with love and precision. Join us for a taste of history and experience the best coffee in New York City, as endorsed by our loyal patrons and connoisseurs alike.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div id="location" class="container mt-4">
+        <div class="row my-4 bg-dark text-light">
+            
+            <div class="col-12 col-md-4 img-stuff">
+                <img src="Images/Googlestaticmap.png" alt="Location Map" class="img-fluid">
+            </div>
+            
+            
+            <div class="col-12 col-md-4 img-stuff">
+                <!-- IGNORE -->
+        
+            </div>
+            
+            
+            <div class="col-12 col-md-4 img-stuff">
+                <h2>Location & Office Hours</h2>
+                <p><strong>La Casa Del Caffe</strong><br>
+                   1036 Morris Park Ave,<br>
+                   Bronx, NY 10461</p>
+                <h2>Hours of Operation:</h2>
+                <p>Monday - Saturday: 7:00 AM - 11:00 PM<br>
+                   Sunday: 7:00 AM - 2:30 PM, 7:00 PM - 11:00 PM<br>
+                   Visit us to experience the best coffee in town, or order online for your daily coffee fix!
+                </p>
+                
             </div>
         </div>
     </div>
     
-    <div class="container mt-4"> 
-        <div class="image-container">
-            <img src="Images/sit_and_relax.jpg" class="d-block w-100" alt="Original Image" />
-            <div class="background-overlay">
-                <div class="text-overlay">Embrace the simple pleasures and serene moments here.</div>
-            </div>
-            
-        </div>
-        
-    </div>
-
-    <div id="about" class="container mt-4">
-        <div class="row my-4" style="background-color: var(--primary-color);">
-            <div class="col">
-                <div class="card-custom3" style="text-align: center; font-size: 26pt; padding: 10px 50px;">
-                    <h1>About Us</h1>
-                </div>
-                <div class="card-custom3">
-                    <h2>Our Heritage</h2>
-                    <p>
-                        Nestled in the heart of Morris Park, a neighborhood rich with Italian heritage, La Casa Del Caffe has been serving the community with exceptional espresso since the late 1990s. Our founder, Anna Agovino, discovered her unique talent for espresso making quite by accident, but soon became the soul of our café.
-                    </p>
-                    <p>
-                        Anna's signature touch and meticulous attention to every detail of espresso making have turned our modest café into a landmark for coffee lovers. Known for her magic wrist and the thick creamy head of her espresso, Anna's dedication ensures every cup is a testament to traditional Italian coffee making. It's not just coffee we're brewing; it's a legacy.
-                    </p>
-                </div>
-                <img src="Images/The outside.jpg" class="outside-img d-block w-100" alt="Outside View"/>
-                
-                <div class="card-custom" style="margin: 40px;">
-                    <h2>Commitment to Excellence</h2>
-                    <p>
-                        At La Casa Del Caffe, we pride ourselves on our commitment to sustainability and community involvement. Each espresso served is a celebration of rich flavors and the joy of Italian coffee, crafted with love and precision. Join us for a taste of history and experience the best coffee in New York City, as endorsed by our loyal patrons and connoisseurs alike.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="location" class="container mt-4">
-        <div class="row my-4 bg-dark text-light">
-        <div class="col-12 col-md-4">
-            <img src="Images/Googlestaticmap.png" alt="Location">
-            <p>Don't miss out on our weekly specials! Enjoy a buy-one-get-one-free offer on all espresso drinks this week. Plus, join us for our monthly coffee tasting event to explore unique blends from around the globe and meet fellow coffee enthusiasts.</p>
-        </div>
-        <div class="col-12 col-md-4">
-            <h2>Location & Office Hours</h2>
-            <p><strong>La Casa Del Caffe</strong><br>
-               1036 Morris Park Ave,<br>
-               Bronx, NY 10461</p>
-            <p><strong>Hours of Operation:</strong></p>
-            <p>
-                Monday - Saturday: 7:00 AM - 11:00 PM <br>
-                Sunday: 7:00 AM - 2:30 PM, 7:00 PM - 11:00 PM<br>
-            </p>
-            <!--ul>
-                <li>Monday - Saturday: 7:00 AM - 11:00 PM</li>
-                <li></li>
-            </ul-->
-            <p>Visit us to experience the best coffee in town, or order online for your daily coffee fix!</p>
-        </div>
-    </div>
 
    
     <footer class="footer-custom py-3 mt-auto">
@@ -728,7 +878,7 @@
             <p class="text-muted"><strong>La Casa Del Caffe</strong></p>
             <p>(718) 931-7816</p>
             
-            <p><em>Visit us or order online for your daily coffee fix!</em></p>
+            <!--p><em>Visit us or order online for your daily coffee fix!</em></p>-->
         </div>
     </footer>
     
